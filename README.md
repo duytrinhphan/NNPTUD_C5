@@ -1,2 +1,1 @@
-# NNPTUD_C5
-Mỗi ngày là 1 nhánh 
+# Phan Võ Duy Trinh - 2180605574

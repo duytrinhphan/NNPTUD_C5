@@ -3,10 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mongoose = require('mongoose')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const { default: mongoose } = require('mongoose');
 
 var app = express();
 
@@ -22,11 +22,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/products', require('./routes/products'));
-//
-mongoose.connect('mongodb://localhost:27017/C5');
+app.use('/products', require('./routes/product'));
+app.use('/categories', require('./routes/categories'));
+mongoose.connect('mongodb://localhost:27017/Udmoi_C5');
 mongoose.connection.on('connected',function(){
-  console.log("connected hehehe");
+  console.log('connected hehehehehe');
 })
 
 // catch 404 and forward to error handler
